@@ -182,6 +182,7 @@
 
 * 表格
   ```markdown
+  格式：
   |  表头   | 表头 |
   |  ----   | ---- |
   | 单元格  | 单元格|
@@ -196,7 +197,7 @@
 
 * 饼状图
   
-  ```markdown
+  ```html
   格式：
         ```mermaid
    	  pie
@@ -204,24 +205,69 @@
    	  "元素1":比率1
    	  "元素2":比率2
    	  "元素3":比率3
-        ```
   ```
+
+  ```
+   示例代码：
+      ```mermaid
+             pie
+             title [编程语言流行趋势]
+             "C/C++":20
+             "Java":30
+             "Python":40
+             "Rust":10
+  ```
+  ```
+
+###  效果：
+
+```mermaid
+   	  pie
+   	  title 编程语言流行趋势
+   	  "C/C++":20
+   	  "Java":30
+   	  "Python":40
+   	  "Rust":10
+```
 
 * 甘特图
   
-  格式：
-  
   ```markdown
-  ```mermaid
+  格式：
+      ```mermaid
       gantt
+      title [图表标题]
       dateFormat YYYY-MM-DD
-      title 使用mermaid语言定制甘特图
-      section 项目A
-      任务一: Completed, des1, 2020-11-01, 2020-11-02
-      任务二: crit, des2, after des1, 2d
-      section 项目B
-      任务三: done, des3, 2020-11-04, 3d
-      任务四: des4, 5d
-   ```
+  
+      section [待办事项A]
+      [分任务1] :[状态],[当前节点名称],[开始时间],[持续时间/结束时间]
+      [分任务2] :after a1 , 20d
+  
+      section [待办事项B]
+      [分任务3] :2018-06-12 , 12d
+      [分任务4] : 24d
+      
+  语法说明：
+      状态：
+  	     active:当前正在进行
+  	     crit:关键阶段
+  	     done:已经完成
+  	
+  
   ```
+  ```
+
+```mermaid
+gantt
+title 甘特图
+dateFormat YYYY-MM-DD
+
+section 项目A
+任务1 :done, a1, 2018-06-06,2018-06-17
+任务2 :active, a2,2018-06-17,2018-07-22
+
+section 项目B
+任务3 :2018-06-17,12d
+任务4 : 24d
+```
 
